@@ -1,6 +1,6 @@
 # ML-Project-Confidence-Detection
 
-# 🚀 Makine Öğrenmesi Projesi: Beden Dili ile Güven Tespiti (Confidence Detection)
+#  Makine Öğrenmesi Projesi: Beden Dili ile Güven Tespiti (Confidence Detection)
 
 Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzerinden güven seviyesini (**Confident, Neutral, Low**) tahmin etmeyi amaçlayan bir **Çoklu Sınıflandırma (Multi-Class Classification)** projesidir.
 ---
