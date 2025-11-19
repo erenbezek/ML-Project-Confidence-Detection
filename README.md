@@ -15,7 +15,8 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 | **Sınıf Dağılım Grafiği** | Hedef sınıflar arasındaki **veri dengesizliğini (imbalance)** kontrol etmek. Modelin başarısını gerekçelendirmek. |
 
 * **Sınıf Dağılımı (Bar Plot):**
-   <img width="700" height="500" alt="class_distribution_v2" src="https://github.com/user-attachments/assets/9c502e7f-5ba6-43ca-949e-8d07bc52fa2d" />
+  <img width="700" height="500" alt="class_distribution_v2" src="https://github.com/user-attachments/assets/9c502e7f-5ba6-43ca-949e-8d07bc52fa2d" />
+
 
 
 
@@ -32,8 +33,12 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 
 
+
 * **Özellikler Arası İlişkiler (Pair Plot):**
-     (ss5)
+     <img width="877" height="750" alt="gorsel" src="https://github.com/user-attachments/assets/51ed8dfa-1d53-479e-a49c-505e58b49105" />
+
+
+
 
 ---
 
@@ -69,13 +74,21 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 | **Doğruluk (Accuracy)** | **%97.56** | Model, test verisinin neredeyse tamamını doğru sınıflandırmıştır. |
 
 * **Hata Matrisi (Confusion Matrix):**
-     (ss3)
+
+   <img width="600" height="400" alt="dosya1" src="https://github.com/user-attachments/assets/ee62a829-0eab-454c-96ab-df5b33fa005b" />
+
+
+
     * **Bulgu:** Matris, modelin **üç sınıfı da** çok düşük hata oranıyla ayırt ettiğini gösterir.
 
 ### B. Özellik Önem Sıralaması
 
 * **Feature Importance:**
-     (ss4)
+
+    <img width="1242" height="741" alt="Ekran görüntüsü 2025-11-19 235738" src="https://github.com/user-attachments/assets/35ac04e1-2b49-4875-99c7-b3706a153db8" />
+
+
+
     * **Bulgu:** Modelin kararına en çok etki eden özellikler **`shoulder_span`**, **`wrist_distance_x`** ve **`eye_distance_ratio`** gibi **vücut oranları ve duruşla** ilgili özellikler olmuştur.
 
 ### C. Genel Sonuç (İster 5)
