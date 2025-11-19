@@ -21,6 +21,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 
 
+
 ### B. Korelasyon Testi ve Özellik Kararları (İster 2 & 3)
 
 | Korelasyon Test Yöntemi | Yapılma Nedeni | Kolon Çıkarma Kararı |
