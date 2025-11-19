@@ -16,7 +16,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 
 * **Sınıf Dağılımı (Bar Plot):**
-goruntu1.png<img src="goruntu1.png" width="700">
+goruntu1.png
 
 
 
