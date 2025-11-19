@@ -15,7 +15,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 | **Sınıf Dağılım Grafiği** | Hedef sınıflar arasındaki **veri dengesizliğini (imbalance)** kontrol etmek. Modelin başarısını gerekçelendirmek. |
 
 * **Sınıf Dağılımı (Bar Plot):**
- <img width="700" height="500" alt="class_distribution_v2" src="https://github.com/user-attachments/assets/9c502e7f-5ba6-43ca-949e-8d07bc52fa2d" />
+   <img width="700" height="500" alt="class_distribution_v2" src="https://github.com/user-attachments/assets/9c502e7f-5ba6-43ca-949e-8d07bc52fa2d" />
 
 
 
@@ -28,7 +28,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 | **Feature Importance** | Bir özelliğin hedef değişkenle olan **tahmin edici gücünü** belirleyerek, en güçlü ilişkiye sahip özellikleri kanıtlamak. | - |
 
 * **Kritik Özellik Dağılımı (Violin Plot):**
-    <img width="800" height="600" alt="shoulder_span_violinplot" src="https://github.com/user-attachments/assets/1215d6e0-5652-4744-ac83-a8307ecffc5f" />
+   <img width="800" height="600" alt="shoulder_span_violinplot" src="https://github.com/user-attachments/assets/1215d6e0-5652-4744-ac83-a8307ecffc5f" />
 
 
 
