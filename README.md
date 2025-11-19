@@ -11,8 +11,8 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 | İşlem | Yapılma Nedeni (Gerekçesi) |
 | :--- | :--- |
-| **`df.info()` Kontrolü** | **Eksik (Null) değer** olup olmadığını ve veri tiplerinin modellemeye uygunluğunu kontrol etmek. |
-| **Sınıf Dağılım Grafiği** | Hedef sınıflar arasındaki **veri dengesizliğini (imbalance)** kontrol etmek. Modelin başarısını gerekçelendirmek. |
+| **`df.info()` Kontrolü** | **Eksik (Null) değer** olup olmadığını ve veri tiplerinin modellemeye uygunluğunu kontrol etmek için. |
+| **Sınıf Dağılım Grafiği** | Hedef sınıflar arasındaki **veri dengesizliğini (imbalance)** kontrol etmek. Modelin başarısını gerekçelendirmek içib. |
 
 
 * **Sınıf Dağılımı (Bar Plot):**
@@ -27,9 +27,9 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 | Korelasyon Test Yöntemi | Yapılma Nedeni | Kolon Çıkarma Kararı |
 | :--- | :--- | :--- |
-| **Box/Violin Plot** | Önemli sayısal özelliklerin sınıflar arasında ayrım gücünü **görsel olarak test etmek** (Korelasyon analizi). | İlk denemede yüksek performans elde edildiği için **düşük korelasyon nedeniyle hiçbir kolon çıkarılmamıştır**. |
-| **Pair Plot** | Çoklu değişkenler arasındaki ilişkilerin sınıflara göre nasıl ayrıldığını **görsel olarak test etmek** (Hocanın örneğine en yakın görsel test). | - |
-| **Feature Importance** | Bir özelliğin hedef değişkenle olan **tahmin edici gücünü** belirleyerek, en güçlü ilişkiye sahip özellikleri kanıtlamak. | - |
+| **Box/Violin Plot** | Önemli sayısal özelliklerin sınıflar arasında ayrım gücünü **görsel olarak test etmek** (Korelasyon analizi). | İlk denemede yüksek performans elde ettiğim için **düşük korelasyon nedeniyle hiçbir kolon çıkarılmamıştır**. |
+| **Pair Plot** | Çoklu değişkenler arasındaki ilişkilerin sınıflara göre nasıl ayrıldığını **görsel olarak test etmek** . | - |
+| **Feature Importance** | Bir özelliğin hedef değişkenle olan **tahmin edici gücünü** belirleyerek, en güçlü ilişkiye sahip özellikleri kanıtlama. | - |
 
 * **Kritik Özellik Dağılımı (Violin Plot):**
      <img width="800" height="600" alt="shoulder_span_violinplot" src="https://github.com/user-attachments/assets/1215d6e0-5652-4744-ac83-a8307ecffc5f" />
@@ -50,8 +50,8 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 | İşlem | Yapılma Nedeni (Gerekçesi) |
 | :--- | :--- |
-| **One-Hot Encoding** | **Kategorik metin** verilerini modelin anlayacağı **sayısal (ikili)** formata dönüştürmek. |
-| **Label Encoding** | Üç farklı etiketi modelin anlayacağı **0, 1, 2** gibi sayısal hedeflere dönüştürmek. |
+| **One-Hot Encoding** | **Kategorik metin** verilerini modelin anlayacağı **sayısal (ikili)** formata dönüştürme. |
+| **Label Encoding** | Üç farklı etiketi modelin anlayacağı **0, 1, 2** gibi sayısal hedeflere dönüştürme. |
 | **Train-Test Split** | Modelin genelleme yeteneğini test etmek. |
 
 ---
@@ -65,7 +65,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 | **Problem Tipi** | **Sınıflandırma** (Etiket Tahmini) | Regresyon (Sürekli Sayı Tahmini) |
 | **Uygunluk** | Kategorik etiketler için idealdir. | Sayısal tahminler için uygundur. |
 
-**Gerekçe:** Hedef değişkenimizin **kategorik etiketler** olması nedeniyle, **Random Forest Sınıflandırıcı** modeli tercih edilmiştir. Bu model, yüksek doğruluk ve kararlılık sunarak projenin gerekliliklerini en iyi şekilde karşılamaktadır.
+**Gerekçe:** Hedef değişkenimizin **kategorik etiketler** olması nedeni ile, **Random Forest Sınıflandırıcı** modeli tercih ettim. Bu model, yüksek doğruluk ve kararlılık sunarak projenin gerekliliklerini  iyi şekilde karşıladı.
 
 ---
 
@@ -75,7 +75,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 | Metrik | Sonuç | Yorum |
 | :--- | :--- | :--- |
-| **Doğruluk (Accuracy)** | **%97.56** | Model, test verisinin neredeyse tamamını doğru sınıflandırmıştır. |
+| **Doğruluk (Accuracy)** | **%97.56** | Model, test verisinin yüksek oranda doğru sınıflandırmıştır. |
 
 * **Hata Matrisi (Confusion Matrix):**
 
@@ -84,7 +84,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 
 
-    * **Bulgu:** Matris, modelin **üç sınıfı da** çok düşük hata oranıyla ayırt ettiğini gösterir.
+    * **Bulgu:** Matris, modelin **üç sınıfı da** çok düşük hata oranıyla ayırt ettigini gösteriyor.
 
 ### B. Özellik Önem Sıralaması
 
@@ -95,8 +95,8 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 
 
-    * **Bulgu:** Modelin kararına en çok etki eden özellikler **`shoulder_span`**, **`wrist_distance_x`** ve **`eye_distance_ratio`** gibi **vücut oranları ve duruşla** ilgili özellikler olmuştur.
+    * **Bulgu:** Modelin kararına en çok etki eden özellikler: **`shoulder_span`**, **`wrist_distance_x`** ve **`eye_distance_ratio`** gibi **vücut oranları ve duruşla** ilgili özelliklerdir.
 
 ### C. Genel Sonuç
 
-Bu proje, **Random Forest** modeli kullanarak beden dili verilerinden güven seviyesini tahmin etme görevinde **%97.56** gibi olağanüstü bir başarı elde etmiştir. Geliştirilen modelin analizi ve **Feature Importance** bulguları, güven seviyesinin belirlenmesinde en kritik bilginin **duruş ve vücut oranlarından** geldiğini kanıtlamıştır. Proje, tüm akademik modelleme, analiz ve gerekçelendirme adımlarını başarıyla tamamlamıştır.
+Bu proje, **Random Forest** modeli kullanarak beden dili verilerinden güven seviyesini tahmin etme görevinde **%97.56** gibi bir başarı elde etmiştir. Geliştirilen modelin analizi ve **Feature Importance** bulguları, güven seviyesinin belirlenmesinde en kritik bilginin **duruş ve vücut oranlarından** geldiğini kanıtlamaktadır böylece. Proje; modelleme, analiz ve gerekçelendirme adımlarını başarıyla tamamlamıştır.
