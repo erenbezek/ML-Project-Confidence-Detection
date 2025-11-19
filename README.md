@@ -7,7 +7,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 ## 1. Veri Seti ve Keşifçi Veri Analizi (EDA)
 
-### A. İşlem Gerekçeleri ve Veri Kontrolü (İster 1)
+### A. İşlem Gerekçeleri ve Veri Kontrolü 
 
 | İşlem | Yapılma Nedeni (Gerekçesi) |
 | :--- | :--- |
@@ -23,7 +23,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 
 
-### B. Korelasyon Testi ve Özellik Kararları (İster 2 & 3)
+### B. Korelasyon Testi ve Özellik Kararları
 
 | Korelasyon Test Yöntemi | Yapılma Nedeni | Kolon Çıkarma Kararı |
 | :--- | :--- | :--- |
@@ -58,7 +58,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 ## 3. Model Seçimi ve Eğitimi
 
-### A. Modelin Uygunluğu Gerekçesi (İster 4)
+### A. Modelin Uygunluğu Gerekçesi 
 
 | Özellik | Random Forest (Seçilen) | Linear Regression (Uygun Değil) |
 | :--- | :--- | :--- |
@@ -97,6 +97,6 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
     * **Bulgu:** Modelin kararına en çok etki eden özellikler **`shoulder_span`**, **`wrist_distance_x`** ve **`eye_distance_ratio`** gibi **vücut oranları ve duruşla** ilgili özellikler olmuştur.
 
-### C. Genel Sonuç (İster 5)
+### C. Genel Sonuç
 
 Bu proje, **Random Forest** modeli kullanarak beden dili verilerinden güven seviyesini tahmin etme görevinde **%97.56** gibi olağanüstü bir başarı elde etmiştir. Geliştirilen modelin analizi ve **Feature Importance** bulguları, güven seviyesinin belirlenmesinde en kritik bilginin **duruş ve vücut oranlarından** geldiğini kanıtlamıştır. Proje, tüm akademik modelleme, analiz ve gerekçelendirme adımlarını başarıyla tamamlamıştır.
