@@ -31,14 +31,14 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 | **Feature Importance** | Bir özelliğin hedef değişkenle olan **tahmin edici gücünü** belirleyerek, en güçlü ilişkiye sahip özellikleri kanıtlama. | - |
 
 * **Kritik Özellik Dağılımı (Violin Plot):**
-     <img width="800" height="600" alt="shoulder_span_violinplot" src="https://github.com/user-attachments/assets/1215d6e0-5652-4744-ac83-a8307ecffc5f" />
+    ![Violin Plot](goruntu2.png)
 
 
 
 
 
 * **Özellikler Arası İlişkiler (Pair Plot):**
-     <img width="877" height="750" alt="gorsel" src="https://github.com/user-attachments/assets/51ed8dfa-1d53-479e-a49c-505e58b49105" />
+     ![Pair PLot](goruntu3.png)     
 
 
 
@@ -78,7 +78,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 * **Hata Matrisi (Confusion Matrix):**
 
-   <img width="600" height="400" alt="dosya1" src="https://github.com/user-attachments/assets/ee62a829-0eab-454c-96ab-df5b33fa005b" />
+   ![Confusion MAtrix](goruntu4.png)
 
 
 
@@ -89,7 +89,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 * **Feature Importance:**
 
-    <img width="1242" height="741" alt="Ekran görüntüsü 2025-11-19 235738" src="https://github.com/user-attachments/assets/35ac04e1-2b49-4875-99c7-b3706a153db8" />
+    ![ozekkik onem](goruntu5.png)
 
 
 
