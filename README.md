@@ -80,7 +80,9 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 | Metrik | Sonuç | Yorum |
 | :--- | :--- | :--- |
 | **Doğruluk (Accuracy)** | **%97.56** | Model, test verisinin yüksek oranda doğru sınıflandırmıştır. |
-
+    
+   ![acc](goruntu7.png)
+   
 * **Hata Matrisi (Confusion Matrix):**
 
    ![RF hata matrix](goruntu4.png)
