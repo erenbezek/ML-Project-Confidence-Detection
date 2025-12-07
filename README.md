@@ -62,12 +62,14 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 ### A. Modelin Uygunluğu Gerekçesi 
 
-| Özellik | Random Forest (Seçilen) | Linear Regression (Uygun Değil) |
-| :--- | :--- | :--- |
-| **Problem Tipi** | **Sınıflandırma** (Etiket Tahmini) | Regresyon (Sürekli Sayı Tahmini) |
-| **Uygunluk** | Kategorik etiketler için ideal. | Sayısal tahminler için uygun. |
+| Özellik | **Random Forest (RF)** | **Lojistik Regresyon (LR)** | **Karşılaştırma** |
+| :--- | :--- | :--- | :--- |
+| **Problem Tipi** | **Sınıflandırma** (Non-linear) | **Sınıflandırma** (Linear) | - |
+| **Accuracy Skoru** | **%97.56** | **%78.91** | **%18.65'lik farkla RF, en iyi model.** |
+| **Uygunluk** | Non-lineer (karmaşık) veriler için ideal. | Doğrusal modeller için uygun. | - |
 
- Hedef değişkenimizin **kategorik etiketler** olması nedeni ile, **Random Forest Sınıflandırıcı** modelini tercih ettim. Bu model, yüksek doğruluk ve kararlılık sunarak projenin gerekliliklerini  iyi şekilde karşıladı.
+ **Random Forest** modeli, Lojistik Regresyon modelinden **daha iyi sonuç** vermiştir.
+**Doğrusal Olmayan İlişkiler:** LR'ın aldığı nispeten daha düşük skor (%78.91) ve eğitim sırasındaki verdiği **Yakınsama Uyarısı (ConvergenceWarning)**, veri setindeki ilişkilerin **doğrusal olmadığını** ispatlamış olıp Random Forest ise, beden dili verisinin **karmaşık (non-lineer)** yapısını yakaladığı için üstünlük sağladığını anlıyoruz.
 
 ---
 
