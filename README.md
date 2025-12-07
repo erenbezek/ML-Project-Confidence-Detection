@@ -9,10 +9,10 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 ### A. İşlem Gerekçeleri ve Veri Kontrolü 
 
-| İşlem | Yapılma Nedeni (Gerekçesi) | Etki |
+| İşlem | Yapılma Nedeni (Gerekçesi) | 
 | :--- | :--- |
-| **`df.info()` Kontrolü** | **Eksik (Null) değer** olup olmadığını ve veri tiplerinin modellemeye uygunluğunu kontrol etmek için. | - |
-| **Sınıf Dağılım Grafiği** | Hedef sınıflar arasındaki **veri dengesizliğini (imbalance)** kontrol etmek. Modelin başarısını gerekçelendirmek içib. | - | 
+| **`df.info()` Kontrolü** | **Eksik (Null) değer** olup olmadığını ve veri tiplerinin modellemeye uygunluğunu kontrol etmek için. | 
+| **Sınıf Dağılım Grafiği** | Hedef sınıflar arasındaki **veri dengesizliğini (imbalance)** kontrol etmek. Modelin başarısını gerekçelendirmek içib. | 
 | Korelasyon Matrisi (Sayısal) | Tüm sayısal özellikler arasındaki **doğrusal ilişki gücünü somut olarak test etmek.** | **Etkisi:** Çoğu özellik arasında **zayıf doğrusal korelasyon** olduğu görüldü. **Lojistik Regresyon** gibi doğrusal modellerin yetersiz kalacağını öngörmemizi sağladı. |
 | **Box/Violin Plot** | Kritik özelliklerin sınıflar arasında **ayrım gücünü görsel olarak test etmek**. | **Etkisi:** Özelliklerin sınıfları başarıyla ayırma potansiyeline sahip olduğu öngörüldü, bu da **yüksek doğruluk** skorunu destekleyen temel kanıt oldu. |
 | Kolon Çıkarma Kararı | İlk denemede yüksek performans elde edildiği için **düşük korelasyon sebebiyle hiçbir kolon çıkarılmamıştır**. | - |
