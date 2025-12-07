@@ -88,7 +88,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
    ![LR hata matrix](goruntu6.png)
 
 
-   Matris, modelin(RF) **üç sınıfı da** çok düşük hata oranıyla ayırt ettigini gösteriyor.
+   Matrisler, RF modelinin LR modeline göre **üç sınıfı da** çok düşük hata oranıyla ayırt ettigini gösteriyor.
 
 ### B. Özellik Önem Sıralaması
 
