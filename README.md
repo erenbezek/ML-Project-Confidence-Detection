@@ -69,7 +69,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 | **Uygunluk** | Non-lineer (karmaşık) veriler için ideal. | Doğrusal modeller için uygun. | - |
 
  **Random Forest** modeli, Lojistik Regresyon modelinden **daha iyi sonuç** vermiştir.
-**Doğrusal Olmayan İlişkiler:** LR'ın aldığı nispeten daha düşük skor (%78.91) ve eğitim sırasındaki verdiği **Yakınsama Uyarısı (ConvergenceWarning)**, veri setindeki ilişkilerin **doğrusal olmadığını** ispatlamış olıp Random Forest ise, beden dili verisinin **karmaşık (non-lineer)** yapısını yakaladığı için üstünlük sağladığını anlıyoruz.
+ LR'ın aldığı nispeten daha düşük skor (%78.91) ve eğitim sırasındaki verdiği **Yakınsama Uyarısı (ConvergenceWarning)**, veri setindeki ilişkilerin **doğrusal olmadığını** ispatlamış olıp Random Forest ise, beden dili verisinin **karmaşık (non-lineer)** yapısını yakaladığı için üstünlük sağladığını buradan anlıyoruz.
 
 ---
 
