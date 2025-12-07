@@ -52,9 +52,9 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 | İşlem | Yapılma Nedeni (Gerekçesi) |
 | :--- | :--- |
-| **One-Hot Encoding** | **Kategorik metin** verilerini modelin anlayacağı **sayısal (ikili)** formata dönüştürme. |
+| **One-Hot Encoding** | **Kategorik metin** verilerini modelin anlayacağı **sayısal (ikili)** formata dönüştürme. Etkisi: Modelin, her bir spesifik beden dili kategorisini bağımsız bir kural olarak kullanmasını sağladı. |
 | **Label Encoding** | Üç farklı etiketi modelin anlayacağı **0, 1, 2** gibi sayısal hedeflere dönüştürme. |
-| **Train-Test Split** | Modelin genelleme yeteneğini test etmek. |
+| **Train-Test Split** | Modelin genelleme yeteneğini test etmek. Etkisi: Yüksek doğruluğun görülmemiş (unseen) veride geçerli olduğunu kanıtladı ve ezberleme (overfitting) olmadığını gösterdi.|
 
 ---
 
