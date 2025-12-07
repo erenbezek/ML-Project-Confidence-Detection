@@ -83,7 +83,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 * **Hata Matrisi (Confusion Matrix):**
 
-   ![Confusion MAtrix](goruntu4.png)
+   ![RF hata matrix](goruntu4.png)
 
    ![LR hata matrix](goruntu6.png)
 
