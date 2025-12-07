@@ -73,7 +73,7 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 ---
 
-## 4. Model Değerlendirme ve Genel Sonuç
+## 4. Genel Sonuclar ve Değerlendirme
 
 ### A. Model Performansı
 
@@ -85,10 +85,10 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
    ![Confusion MAtrix](goruntu4.png)
 
+   ![LR hata matrix](goruntu6.png)
 
 
-
-   Matris, modelin **üç sınıfı da** çok düşük hata oranıyla ayırt ettigini gösteriyor.
+   Matris, modelin(RF) **üç sınıfı da** çok düşük hata oranıyla ayırt ettigini gösteriyor.
 
 ### B. Özellik Önem Sıralaması
 
