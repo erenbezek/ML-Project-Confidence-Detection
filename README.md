@@ -79,7 +79,10 @@ Random Forest, beden dili verisinin karmaşık (non-lineer) yapısını yakalad�
 
 ## 4. Genel Sonuclar ve Değerlendirme
 
-### A. Model Performansı
+### A. Model Performansları
+
+   ![genel](goruntu9.png)
+ ![genel2](goruntu8.png)
 
 | Metrik | Sonuç | Yorum |
 | :--- | :--- | :--- |
@@ -93,12 +96,7 @@ Random Forest, beden dili verisinin karmaşık (non-lineer) yapısını yakalad�
 
    ![LR hata matrix](goruntu6.png)
 
-
-   Matrisler, RF modelinin LR modeline göre **üç sınıfı da** çok düşük hata oranıyla ayırt ettigini gösteriyor.
-
-    ![genel](goruntu9.png)
-    ![genel2](goruntu8.png)
-
+    
   
 ### B. Özellik Önem Sıralaması
 
