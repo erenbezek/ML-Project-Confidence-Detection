@@ -90,10 +90,10 @@ Random Forest, beden dili verisinin karmaşık (non-lineer) yapısını yakalad�
     
    ![acc](goruntu7.png)
    
-* **RF-Hata Matrisi (Confusion Matrix):**
+* **RFveLR-Hata Matrisi (Confusion Matrix):**
 
    ![RF hata matrix](goruntu4.png)
-
+   ![LR hata matrix](goruntu6.png)
     
   
 ### B. Özellik Önem Sıralaması
