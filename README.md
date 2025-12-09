@@ -7,15 +7,15 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 ## 1. Veri Seti ve Keşifçi Veri Analizi (EDA)
 
-### A. İşlem Gerekçeleri ve Veri Kontrolü 
+### A. İşlem Gerekçeleri ve Veri Kontrolü
 
-| İşlem | Yapılma Nedeni (Gerekçesi) | 
-| :--- | :--- |
-| **`df.info()` Kontrolü** | **Eksik (Null) değer** olup olmadığını ve veri tiplerinin modellemeye uygunluğunu kontrol etmek için. | 
-| **Sınıf Dağılım Grafiği** | Hedef sınıflar arasındaki **veri dengesizliğini (imbalance)** kontrol etmek. Modelin başarısını gerekçelendirmek içib. | 
-| Korelasyon Matrisi (Sayısal) | Tüm sayısal özellikler arasındaki **doğrusal ilişki gücünü somut olarak test etmek.**  **Etkisi:** Çoğu özellik arasında **zayıf doğrusal korelasyon** olduğu görüldü. **Lojistik Regresyon** gibi doğrusal modellerin yetersiz kalacağını öngörmemizi sağladı. |
-| **Box/Violin Plot** | Kritik özelliklerin sınıflar arasında **ayrım gücünü görsel olarak test etmek**.  **Etkisi:** Özelliklerin sınıfları başarıyla ayırma potansiyeline sahip olduğu öngörüldü, bu da **yüksek doğruluk** skorunu destekleyen temel kanıt oldu. |
-| Kolon Çıkarma Kararı | İlk denemede yüksek performans elde edildiği için **düşük korelasyon sebebiyle hiçbir kolon çıkarılmamıştır**. | 
+| İşlem | Yapılma Nedeni (Gerekçesi) | Etkisi (Analiz Sonucu) |
+| :--- | :--- | :--- |
+| **`df.info()` Kontrolü** | **Eksik (Null) değer** olmadığını ve veri tiplerinin modellemeye uygunluğunu kontrol etmek için. | Veri setinin temiz olduğu, ek temizlik işlemine gerek kalmadığı görüldü. |
+| **Sınıf Dağılım Grafiği** | Hedef sınıflar arasındaki **veri dengesizliğini** kontrol etmek. | Dağılım dengeliydi. **Etkisi:** Modelin herhangi bir sınıfa **yanlılık (bias)** gösterme riski azaltıldı. |
+| Korelasyon Matrisi (Sayısal) | Tüm sayısal özellikler arasındaki **doğrusal ilişki gücünü somut olarak test etmek.** | **Etkisi:** Çoğu özellik arasında **zayıf doğrusal korelasyon** olduğu görüldü. **Lojistik Regresyon** gibi doğrusal modellerin yetersiz kalacağını öngörmemizi sağladı. |
+| **Box/Violin Plot** | Kritik özelliklerin sınıflar arasında **ayrım gücünü görsel olarak test etmek**. | **Etkisi:** Özelliklerin sınıfları başarıyla ayırma potansiyeline sahip olduğu öngörüldü, bu da **yüksek doğruluk** skorunu destekleyen temel kanıt oldu. |
+| Kolon Çıkarma Kararı | İlk denemede yüksek performans elde edildiği için **düşük korelasyon sebebiyle hiçbir kolon çıkarılmamıştır**. | - |
 
 
 * **Sınıf Dağılımı (Bar Plot):**
@@ -50,26 +50,35 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 ## 2. Veri Ön İşleme (Preprocessing)
 
-| İşlem | Yapılma Nedeni (Gerekçesi) |
-| :--- | :--- |
-| **One-Hot Encoding** | **Kategorik metin** verilerini modelin anlayacağı **sayısal (ikili)** formata dönüştürme. Etkisi: Modelin, her bir spesifik beden dili kategorisini bağımsız bir kural olarak kullanmasını sağladı. |
-| **Label Encoding** | Üç farklı etiketi modelin anlayacağı **0, 1, 2** gibi sayısal hedeflere dönüştürme. |
-| **Train-Test Split** | Modelin genelleme yeteneğini test etmek. Etkisi: Yüksek doğruluğun görülmemiş (unseen) veride geçerli olduğunu kanıtladı ve ezberleme (overfitting) olmadığını gösterdi.|
+| İşlem | Yapılma Nedeni (Gerekçesi) | Etkisi (Analiz Sonucu) |
+| :--- | :--- | :--- |
+| **One-Hot Encoding** | **Kategorik metin** verilerini modelin anlayacağı **sayısal (ikili)** formata dönüştürme. | **Etkisi:** Modelin, her bir spesifik beden dili kategorisini bağımsız bir kural olarak kullanmasını sağladı. |
+| **Label Encoding** | Üç farklı etiketi modelin anlayacağı **0, 1, 2** gibi sayısal hedeflere dönüştürme. | **Etkisi:** Sınıflandırma modelinin tahmin çıktılarını standartlaştırdı. |
+| **StandardScaler (Yeni Ekleme)** | **LR, SVC, KNN** gibi mesafe tabanlı modeller için özellik değerlerini standart aralığa getirme. | **Etkisi:** Modellerin **doğru yakınsama** sağlamasını ve performanslarının adil karşılaştırılmasını sağladı. |
+| **Train-Test Split** | Modelin genelleme yeteneğini test etmek. | **Etkisi:** Yüksek doğruluğun görülmemiş (unseen) veride geçerli olduğunu kanıtladı ve ezberleme (overfitting) olmadığını gösterdi. |
 
 ---
 
-## 3. Model Seçimi ve Eğitimi
+## 3. KAPSAMLI MODEL KARŞILAŞTIRMASI VE EĞİTİMİ
 
 ### A. Modelin Uygunluğu Gerekçesi 
 
-| Özellik | **Random Forest (RF)** | **Lojistik Regresyon (LR)** | **Karşılaştırma** |
-| :--- | :--- | :--- | :--- |
-| **Problem Tipi** | **Sınıflandırma** (Non-linear) | **Sınıflandırma** (Linear) | - |
-| **Accuracy Skoru** | **%97.56** | **%78.91** | **%18.65'lik farkla RF, en iyi model.** |
-| **Uygunluk** | Non-lineer (karmaşık) veriler için ideal. | Doğrusal modeller için uygun. | - |
+### A. Modelin Uygunluğu Gerekçesi
 
- **Random Forest** modeli, Lojistik Regresyon modelinden **daha iyi sonuç** vermiştir.
- LR'ın aldığı nispeten daha düşük skor (%78.91) ve eğitim sırasındaki verdiği **Yakınsama Uyarısı (ConvergenceWarning)**, veri setindeki ilişkilerin **doğrusal olmadığını** ispatlamış olıp Random Forest ise, beden dili verisinin **karmaşık (non-lineer)** yapısını yakaladığı için üstünlük sağladığını buradan anlıyoruz.
+| Özellik | **Random Forest (RF)** | **Destekçi Vektör (SVC)** | **Lojistik Regresyon (LR)** | **En Kötü (GNB)** |
+| :--- | :--- | :--- | :--- | :--- |
+| **Problem Tipi** | **Sınıflandırma** (Non-linear) | **Sınıflandırma** (Non-linear/Mesafe) | **Sınıflandırma** (Linear) | **Sınıflandırma** (Basit Olasılık) |
+| **Accuracy Skoru** | **%97.56** | %91.51 | %84.96 | %69.92 |
+| **Gerekçe** | **En Stabil ve En Yüksek Doğruluk.** Non-lineer karmaşık ilişkileri yakaladı. | Yüksek skor almasına rağmen, performansı RF'in gerisinde kaldı. | **Doğrusal olmayan veride yetersiz kaldı.** | Veri karmaşıklığını yakalayamadı. |
+
+**Random Forest (RF)** modeli, **%97.56** doğrulukla **tüm modeller arasında en iyi sonucu** vermiştir.
+
+1. **Doğrusal Olmayan İlişkiler:** LR, KNN, SVC ve GNB gibi diğer modellerin aldığı düşük skorlar (örn. LR %84.96, GNB %69.92), **beden dili verilerindeki ilişkilerin kesinlikle doğrusal (linear) veya basit olmadığını** ispatlamıştır.
+2. **RF Seçim Gerekçesi:** **Random Forest**, birçok ağacın ortalamasını alarak **karmaşık non-lineer kuralları** yakalamış, en yüksek doğruluk ve **kararlılık (stability)** seviyesini sağladığı için nihai seçimimiz olmuştur.
+3. **Yapısal Kanıt:** LR'da alınan **Yakınsama Uyarısı (ConvergenceWarning)**, verinin basit modeller için ne kadar zorlu olduğunu gösteren ek bir kanıttır.
+   
+  
+  Random Forest ise, beden dili verisinin **karmaşık (non-lineer)** yapısını yakaladığı için üstünlük sağladığını buradan anlıyoruz.
 
 ---
 
@@ -97,7 +106,6 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 * **Feature Importance:**
 
     ![ozekkik onem](goruntu5.png)
-
 
 
 
