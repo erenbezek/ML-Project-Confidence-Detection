@@ -9,13 +9,13 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 ### A. İşlem Gerekçeleri ve Veri Kontrolü
 
-| İşlem | Yapılma Nedeni (Gerekçesi) | Etkisi (Analiz Sonucu) |
+| İşlem | Yapılma Nedeni | Etkisi  |
 | :--- | :--- | :--- |
-| **`df.info()` Kontrolü** | **Eksik (Null) değer** olmadığını ve veri tiplerinin modellemeye uygunluğunu kontrol etmek için. | Veri setinin temiz olduğu, ek temizlik işlemine gerek kalmadığı görüldü. |
-| **Sınıf Dağılım Grafiği** | Hedef sınıflar arasındaki **veri dengesizliğini** kontrol etmek. | Dağılım dengeliydi. **Etkisi:** Modelin herhangi bir sınıfa **yanlılık (bias)** gösterme riski azaltıldı. |
-| Korelasyon Matrisi (Sayısal) | Tüm sayısal özellikler arasındaki **doğrusal ilişki gücünü somut olarak test etmek.** | **Etkisi:** Çoğu özellik arasında **zayıf doğrusal korelasyon** olduğu görüldü. **Lojistik Regresyon** gibi doğrusal modellerin yetersiz kalacağını öngörmemizi sağladı. |
-| **Box/Violin Plot** | Kritik özelliklerin sınıflar arasında **ayrım gücünü görsel olarak test etmek**. | **Etkisi:** Özelliklerin sınıfları başarıyla ayırma potansiyeline sahip olduğu öngörüldü, bu da **yüksek doğruluk** skorunu destekleyen temel kanıt oldu. |
-| Kolon Çıkarma Kararı | İlk denemede yüksek performans elde edildiği için **düşük korelasyon sebebiyle hiçbir kolon çıkarılmamıştır**. | - |
+| **`df.info()` Kontrolü** | **Eksik (Null) değer** olmadığını ve veri tiplerinin modellemeye uygunluğunu kontrol etmek için. | Veri setinin temizlik işlemine gerek kalmadığı görüldü. |
+| **Sınıf Dağılım Grafiği** | Hedef sınıflar arasındaki **veri dengesizliğini** kontrol etmek. | Dağılım dengeli. **Etkisi:** Modelin herhangi bir sınıfa **yanlılık** gösterme riski azaltıldı. |
+| Korelasyon Matrisi (Sayısal) | Tüm sayısal özellikler arasındaki **doğrusal ilişki gücünü test etmek.** | **Etkisi:** Çoğu özellik arasında zayıf doğrusal korelasyon olduğu görüldü. **Lojistik Regresyon** gibi doğrusal modellerin yetersiz kalacağını öngörmemi sağladı. |
+| **Box/Violin Plot** | Kritik özelliklerin sınıflar arasında ayrım gücünü görsel olarak test etmek için. | **Etkisi:** Özelliklerin sınıfları ayırma potansiyeline sahip olduğu öngörüldü, bu da doğruluk skorunu destekleyen kanıt oldu. |
+| Kolon Çıkarma Kararı | İlk denemede yüksek performans elde edildiği için düşük korelasyon sebebiyle hiçbir kolon çıkarılmamıştır. | - |
 
 
 * **Sınıf Dağılımı (Bar Plot):**
@@ -27,11 +27,11 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 ### B. Korelasyon Testi ve Özellik Kararları
 
-| Korelasyon Test Yöntemi | Yapılma Nedeni | Kolon Çıkarma Kararı |
-| :--- | :--- | :--- |
-| **Box/Violin Plot** | Önemli sayısal özelliklerin sınıflar arasında ayrım gücünü **görsel olarak test etmek** (Korelasyon analizi). | İlk denemede yüksek performans elde ettiğim için **düşük korelasyon nedeniyle hiçbir kolon çıkarmadım**. |
-| **Pair Plot** | Çoklu değişkenler arasındaki ilişkilerin sınıflara göre nasıl ayrıldığını **görsel olarak test etme** . | - |
-| **Feature Importance** | Bir özelliğin hedef değişkenle olan **tahmin edici gücünü** belirleyerek, en güçlü ilişkiye sahip özellikleri kanıtlama. | - |
+| Korelasyon Test Yöntemi | Yapılma Nedeni | 
+| :--- | :--- | 
+| **Box/Violin Plot** | Önemli sayısal özelliklerin sınıflar arasında ayrım gücünü görsel olarak test etmek için. | 
+| **Pair Plot** | Çoklu değişkenler arasındaki ilişkilerin sınıflara göre nasıl ayrıldığını görsel olarak test edebilme için. | 
+| **Feature Importance** | Bir özelliğin hedef değişkenle olan tahmin edici gücünü belirleyerek, en güçlü ilişkiye sahip özellikleri kanıtlamaya. | 
 
 * **Kritik Özellik Dağılımı (Violin Plot):**
     ![Violin Plot](goruntu2.png)
@@ -52,33 +52,28 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
 | İşlem | Yapılma Nedeni (Gerekçesi) | Etkisi (Analiz Sonucu) |
 | :--- | :--- | :--- |
-| **One-Hot Encoding** | **Kategorik metin** verilerini modelin anlayacağı **sayısal (ikili)** formata dönüştürme. | **Etkisi:** Modelin, her bir spesifik beden dili kategorisini bağımsız bir kural olarak kullanmasını sağladı. |
-| **Label Encoding** | Üç farklı etiketi modelin anlayacağı **0, 1, 2** gibi sayısal hedeflere dönüştürme. | **Etkisi:** Sınıflandırma modelinin tahmin çıktılarını standartlaştırdı. |
-| **StandardScaler (Yeni Ekleme)** | **LR, SVC, KNN** gibi mesafe tabanlı modeller için özellik değerlerini standart aralığa getirme. | **Etkisi:** Modellerin **doğru yakınsama** sağlamasını ve performanslarının adil karşılaştırılmasını sağladı. |
-| **Train-Test Split** | Modelin genelleme yeteneğini test etmek. | **Etkisi:** Yüksek doğruluğun görülmemiş (unseen) veride geçerli olduğunu kanıtladı ve ezberleme (overfitting) olmadığını gösterdi. |
+| **One-Hot Encoding** | **Kategorik metin** verilerini modelin anlayacağı **sayısal (ikili)** formata dönüştürme için. | **Etkisi:** Modelin, her bir spesifik beden dili kategorisini bağımsız bir kural olarak kullanmasını sağladı. |
+| **Label Encoding** | Üç farklı etiketi modelin anlayacağı 0, 1, 2 gibi sayısal hedeflere dönüştürme. | **Etkisi:** Sınıflandırma modelinin tahmin çıktılarını standartlaştırdı.. |
+| **StandardScaler** | **LR, SVC, KNN** gibi mesafe tabanlı modeller için özellik değerlerini standart aralığa getirebilme. | **Etkisi:** Modellerin doğru yakınsama sağlamasını ve performanslarının adil karşılaştırılmasını sağladı. |
+| **Train-Test Split** | Modelin genelleme yeteneğini test etme. | **Etkisi:** Yüksek doğruluğun görülmemiş veride geçerli olduğunu kanıtladı ve ezberleme olmadığını gösterdi. |
 
 ---
 
-## 3. KAPSAMLI MODEL KARŞILAŞTIRMASI VE EĞİTİMİ
-
-### A. Modelin Uygunluğu Gerekçesi 
+## 3. Kapsamlı Model Karşılaştırması ve Eğitimi
 
 ### A. Modelin Uygunluğu Gerekçesi
 
-| Özellik | **Random Forest (RF)** | **Destekçi Vektör (SVC)** | **Lojistik Regresyon (LR)** | **En Kötü (GNB)** |
+| Özellik | **Random Forest (RF)** | **Destekçi Vektör (SVC)** | **Lojistik Regresyon (LR)** | **GNB** |
 | :--- | :--- | :--- | :--- | :--- |
 | **Problem Tipi** | **Sınıflandırma** (Non-linear) | **Sınıflandırma** (Non-linear/Mesafe) | **Sınıflandırma** (Linear) | **Sınıflandırma** (Basit Olasılık) |
 | **Accuracy Skoru** | **%97.56** | %91.51 | %84.96 | %69.92 |
 | **Gerekçe** | **En Stabil ve En Yüksek Doğruluk.** Non-lineer karmaşık ilişkileri yakaladı. | Yüksek skor almasına rağmen, performansı RF'in gerisinde kaldı. | **Doğrusal olmayan veride yetersiz kaldı.** | Veri karmaşıklığını yakalayamadı. |
 
-**Random Forest (RF)** modeli, **%97.56** doğrulukla **tüm modeller arasında en iyi sonucu** vermiştir.
+**Random Forest (RF)** modeli, **%97.56** doğrulukla tüm modeller arasında en iyi sonucu vermiştir.
+ 
+**Doğrusal Olmayan İlişkiler:** LR, KNN, SVC ve GNB gibi diğer modellerin aldığı düşük skorlar, beden dili verilerindeki ilişkilerin kesinlikle doğrusal veya basit olmadığını ispatlamıştır.
 
-1. **Doğrusal Olmayan İlişkiler:** LR, KNN, SVC ve GNB gibi diğer modellerin aldığı düşük skorlar (örn. LR %84.96, GNB %69.92), **beden dili verilerindeki ilişkilerin kesinlikle doğrusal (linear) veya basit olmadığını** ispatlamıştır.
-2. **RF Seçim Gerekçesi:** **Random Forest**, birçok ağacın ortalamasını alarak **karmaşık non-lineer kuralları** yakalamış, en yüksek doğruluk ve **kararlılık (stability)** seviyesini sağladığı için nihai seçimimiz olmuştur.
-3. **Yapısal Kanıt:** LR'da alınan **Yakınsama Uyarısı (ConvergenceWarning)**, verinin basit modeller için ne kadar zorlu olduğunu gösteren ek bir kanıttır.
-   
-  
-  Random Forest ise, beden dili verisinin **karmaşık (non-lineer)** yapısını yakaladığı için üstünlük sağladığını buradan anlıyoruz.
+Random Forest, beden dili verisinin karmaşık (non-lineer) yapısını yakaladığı için üstünlük sağladığını buradan anlıyoruz.
 
 ---
 
@@ -101,6 +96,10 @@ Bu proje, Kaggle veri setini kullanarak, bir kişinin duruşu ve pozisyonu üzer
 
    Matrisler, RF modelinin LR modeline göre **üç sınıfı da** çok düşük hata oranıyla ayırt ettigini gösteriyor.
 
+    ![genel](goruntu9.png)
+    ![genel2](goruntu8.png)
+
+  
 ### B. Özellik Önem Sıralaması
 
 * **Feature Importance:**
