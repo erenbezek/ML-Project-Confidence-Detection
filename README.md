@@ -104,7 +104,7 @@ Random Forest, beden dili verisinin karmaşık (non-lineer) yapısını yakalad�
 
 
 
-   Modelin kararına en çok etki eden özellikler: **`shoulder_span`**, **`wrist_distance_x`** ve **`eye_distance_ratio`** gibi **vücut oranları ve duruşla** ilgili özelliklerdir.
+   Modelin kararına en çok etki eden özellikler: **`shoulder_slope`**, **`wrist_distance_x`** ve **`wrist_shoulder_ratio`** gibi **vücut oranları ve duruşla** ilgili özelliklerdir.
 
 ### C. Genel Sonuç
 
